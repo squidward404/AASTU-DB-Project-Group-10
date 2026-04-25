@@ -27,6 +27,32 @@ The implementation includes:
 - Normalized schema up to BCNF for the relational part
 - Example operational and analytical queries
 
+## Final Data Model
+
+### Entities
+1. Product
+	- product_id
+	- name
+	- price
+2. Supplier
+	- supplier_id
+	- name
+	- phone
+3. Inventory
+	- inventory_id
+	- product_id
+	- quantity
+4. Sale
+	- sale_id
+	- product_id
+	- quantity_sold
+	- sale_date
+
+### Relationships
+- Supplier -> Product (1:M)
+- Product -> Inventory (1:1)
+- Product -> Sale (1:M)
+
 
 ## Repository Structure
 The repository follows the required submission format:
