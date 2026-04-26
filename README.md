@@ -66,9 +66,7 @@ The repository follows the required submission format:
 ```
 /docs
 	final_report.pdf
-	final_report_template.md
 	presentation.pptx
-	presentation_outline.md
 /mysql
 	schema.sql
 	queries.sql
@@ -76,7 +74,6 @@ The repository follows the required submission format:
 	collections.json
 	queries.js
 /diagrams
-	erd.mmd
 	erd.png
 	normalization.pdf
 /annex
