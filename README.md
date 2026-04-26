@@ -38,13 +38,18 @@ The implementation includes:
 	- supplier_id
 	- name
 	- phone
-3. Inventory
+3. Customer
+	- customer_id
+	- name
+	- phone
+4. Inventory
 	- inventory_id
 	- product_id
 	- quantity
-4. Sale
+5. Sale
 	- sale_id
 	- product_id
+	- customer_id
 	- quantity_sold
 	- sale_date
 
@@ -52,6 +57,7 @@ The implementation includes:
 - Supplier -> Product (1:M)
 - Product -> Inventory (1:1)
 - Product -> Sale (1:M)
+- Customer -> Sale (1:M)
 
 
 ## Repository Structure
