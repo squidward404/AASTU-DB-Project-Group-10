@@ -7,6 +7,12 @@ INSERT INTO supplier (name, phone) VALUES
 ('Kebede Trading', '0922234567'),
 ('Hana Wholesale', '0933345678');
 
+INSERT INTO customer (name, phone) VALUES
+('Martha Bekele', '0911456789'),
+('Samuel Tesfaye', '0922567890'),
+('Lidya Alemu', '0933678901'),
+('Henok Abate', '0944789012');
+
 INSERT INTO product (supplier_id, name, price) VALUES
 (1, 'Soap', 150.00),
 (2, 'Shampoo', 800.00),
@@ -23,17 +29,17 @@ INSERT INTO inventory (product_id, quantity) VALUES
 (5, 40),
 (6, 90);
 
-INSERT INTO sale (product_id, quantity_sold, sale_date) VALUES
-(1, 5,  '2026-04-20 09:30:00'),
-(2, 3,  '2026-04-20 13:10:00'),
-(3, 4,  '2026-04-21 10:25:00'),
-(4, 2,  '2026-04-21 16:40:00'),
-(5, 6,  '2026-04-22 11:05:00'),
-(6, 7,  '2026-04-22 15:55:00'),
-(1, 8,  '2026-04-23 13:20:00'),
-(3, 6,  '2026-04-23 17:45:00'),
-(2, 5,  '2026-04-24 10:10:00'),
-(5, 4,  '2026-04-24 12:30:00');
+INSERT INTO sale (product_id, customer_id, quantity_sold, sale_date) VALUES
+(1, 1, 5,  '2026-04-20 09:30:00'),
+(2, 2, 3,  '2026-04-20 13:10:00'),
+(3, 3, 4,  '2026-04-21 10:25:00'),
+(4, 4, 2,  '2026-04-21 16:40:00'),
+(5, 1, 6,  '2026-04-22 11:05:00'),
+(6, 2, 7,  '2026-04-22 15:55:00'),
+(1, 3, 8,  '2026-04-23 13:20:00'),
+(3, 4, 6,  '2026-04-23 17:45:00'),
+(2, 1, 5,  '2026-04-24 10:10:00'),
+(5, 2, 4,  '2026-04-24 12:30:00');
 
 -- day to day operations
 
@@ -53,8 +59,8 @@ SET quantity = quantity + 20
 WHERE product_id = 2;
 
 -- 4) record one sale
-INSERT INTO sale (product_id, quantity_sold, sale_date)
-VALUES (2, 5, NOW());
+INSERT INTO sale (product_id, customer_id, quantity_sold, sale_date)
+VALUES (2, 3, 5, NOW());
 
 -- 5) reduce stock after the sale
 UPDATE inventory
@@ -153,8 +159,10 @@ ORDER BY p.name;
 -- 14) sales report with product, quantity, and date
 SELECT
 	p.name AS product,
+	c.name AS customer,
 	sa.quantity_sold AS sold_quantity,
 	DATE(sa.sale_date) AS date
 FROM sale sa
 JOIN product p ON sa.product_id = p.product_id
+JOIN customer c ON sa.customer_id = c.customer_id
 ORDER BY sa.sale_date;

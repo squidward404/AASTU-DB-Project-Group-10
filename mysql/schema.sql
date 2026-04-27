@@ -2,6 +2,7 @@
 DROP TABLE IF EXISTS sale;
 DROP TABLE IF EXISTS inventory;
 DROP TABLE IF EXISTS product;
+DROP TABLE IF EXISTS customer;
 DROP TABLE IF EXISTS supplier;
 
 -- base tables
@@ -24,6 +25,12 @@ CREATE TABLE product (
 	CONSTRAINT product_price_check CHECK (price >= 0)
 );
 
+CREATE TABLE customer (
+	customer_id INT AUTO_INCREMENT PRIMARY KEY,
+	name VARCHAR(100) NOT NULL,
+	phone VARCHAR(20) NOT NULL UNIQUE
+);
+
 CREATE TABLE inventory (
 	inventory_id INT AUTO_INCREMENT PRIMARY KEY,
 	product_id INT NOT NULL UNIQUE,
@@ -39,11 +46,17 @@ CREATE TABLE inventory (
 CREATE TABLE sale (
 	sale_id INT AUTO_INCREMENT PRIMARY KEY,
 	product_id INT NOT NULL,
+	customer_id INT NOT NULL,
 	quantity_sold INT NOT NULL,
 	sale_date DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	CONSTRAINT sale_product_fk
 		FOREIGN KEY (product_id)
 		REFERENCES product(product_id)
+		ON UPDATE CASCADE
+		ON DELETE RESTRICT,
+	CONSTRAINT sale_customer_fk
+		FOREIGN KEY (customer_id)
+		REFERENCES customer(customer_id)
 		ON UPDATE CASCADE
 		ON DELETE RESTRICT,
 	CONSTRAINT sale_quantity_check CHECK (quantity_sold > 0)
