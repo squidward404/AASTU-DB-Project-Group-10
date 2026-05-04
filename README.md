@@ -1,35 +1,3 @@
-
-// Inventory & Sales MongoDB Project
-
-This project sets up a simple inventory and sales database using MongoDB and runs aggregation queries to analyze the data.
-
-Features
-Creates collections: supplier, customer, product, inventory, sale
-
-Inserts sample data
-Performs aggregation queries:
-Products with supplier details
-Inventory by product
-Sales with product and customer info
-Total quantity sold per product
-Sales count per customer
-
-
-How to Run:
-Open mongosh
-
-Run:
-
-use inventory_db
-load("mongodb/queries.js")
- Output
-
-The script prints results directly in the console using printjson().
-
-Requirements
-MongoDB installed
-mongosh shell
-=======
 # AASTU-DB-Project-Group-5
 
 ## Project Title
@@ -49,90 +17,30 @@ Inventory and Sales Management System Database
 - Befikir Shimelis (ETS 0237/17)
 
 ## Project Description
-This project designs and implements a complete database solution for an Inventory and Sales
-Management System. The system handles product registration, stock updates, sales transactions,
-low-stock monitoring, category organization, and inventory value analysis.
-
-The implementation includes:
-- Relational database design and implementation in MySQL
-- NoSQL design and implementation in MongoDB
-- Normalized schema up to BCNF for the relational part
-- Example operational and analytical queries
-
-## Final Data Model
-
-### Entities
-1. Product
-	- product_id
-	- name
-	- price
-2. Supplier
-	- supplier_id
-	- name
-	- phone
-3. Customer
-	- customer_id
-	- name
-	- phone
-4. Inventory
-	- inventory_id
-	- product_id
-	- quantity
-5. Sale
-	- sale_id
-	- product_id
-	- customer_id
-	- quantity_sold
-	- sale_date
-
-### Relationships
-- Supplier -> Product (1:M)
-- Product -> Inventory (1:1)
-- Product -> Sale (1:M)
-- Customer -> Sale (1:M)
-
-
-## Repository Structure
-The repository follows the required submission format:
-
-```
-/docs
-	final_report.pdf
-	presentation.pptx
-/mysql
-	schema.sql
-	queries.sql
-/mongodb
-	collections.json
-	queries.js
-/diagrams
-	erd.png
-	normalization.pdf
-/annex
-	survey_questions.pdf
-	sample_forms.pdf
-CONTRIBUTION.md
-README.md
-```
+This project implements an inventory and sales management system using both MySQL and MongoDB. It supports product management, stock tracking, sales transactions, and analytical queries.
 
 ## Technologies Used
 - MySQL 8+
 - MongoDB 6+
 
-## How To Run
+## Database Design
+Entities include:
+- Product
+- Supplier
+- Customer
+- Inventory
+- Sale
+
+## Repository Structure
+(keep your structure here)
+
+## How to Run
 
 ### MySQL
-1. Create a database:
-	- `CREATE DATABASE inventory_db;`
-	- `USE inventory_db;`
-2. Run schema script from `mysql/schema.sql`.
-3. Run data and query script from `mysql/queries.sql`.
+- create DB
+- run schema.sql
+- run queries.sql
 
 ### MongoDB
-1. Open `mongosh`.
-2. Run:
-	- `use inventory_db`
-	 - `load("mongodb/queries.js")`
-3. Optional: import sample JSON from `mongodb/collections.json` if preferred.
-
-
+- use inventory_db
+- load("mongodb/queries.js")
