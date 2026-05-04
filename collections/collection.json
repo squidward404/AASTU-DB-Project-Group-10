@@ -1,0 +1,98 @@
+{
+  "supplier": [
+    {
+      "supplier_id": 1,
+      "name": "Alem Suppliers",
+      "phone": "0911001001"
+    },
+    {
+      "supplier_id": 2,
+      "name": "Abel Distribution",
+      "phone": "0911001002"
+    }
+  ],
+  "customer": [
+    {
+      "customer_id": 1,
+      "name": "Marta Bekele",
+      "phone": "0912002001"
+    },
+    {
+      "customer_id": 2,
+      "name": "Nahom Demeke",
+      "phone": "0912002002"
+    },
+    {
+      "customer_id": 3,
+      "name": "Saron Tola",
+      "phone": "0912002003"
+    }
+  ],
+  "product": [
+    {
+      "product_id": 1,
+      "name": "Rice 1kg",
+      "price": 120,
+      "supplier_id": 1
+    },
+    {
+      "product_id": 2,
+      "name": "Cooking Oil 1L",
+      "price": 210,
+      "supplier_id": 1
+    },
+    {
+      "product_id": 3,
+      "name": "Laundry Soap",
+      "price": 65,
+      "supplier_id": 2
+    }
+  ],
+  "inventory": [
+    {
+      "inventory_id": 1,
+      "product_id": 1,
+      "quantity": 100
+    },
+    {
+      "inventory_id": 2,
+      "product_id": 2,
+      "quantity": 60
+    },
+    {
+      "inventory_id": 3,
+      "product_id": 3,
+      "quantity": 150
+    }
+  ],
+  "sale": [
+    {
+      "sale_id": 1,
+      "product_id": 1,
+      "customer_id": 1,
+      "quantity_sold": 3,
+      "date": "2026-04-22"
+    },
+    {
+      "sale_id": 2,
+      "product_id": 2,
+      "customer_id": 2,
+      "quantity_sold": 2,
+      "date": "2026-04-22"
+    },
+    {
+      "sale_id": 3,
+      "product_id": 1,
+      "customer_id": 3,
+      "quantity_sold": 5,
+      "date": "2026-04-23"
+    },
+    {
+      "sale_id": 4,
+      "product_id": 3,
+      "customer_id": 1,
+      "quantity_sold": 10,
+      "date": "2026-04-23"
+    }
+  ]
+}
