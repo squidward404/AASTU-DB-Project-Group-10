@@ -5,7 +5,7 @@ This document outlines the individual contributions of each group member to the 
 ---
 
 **Eden Wubshet (ETS 0461/17)**
-- Created: `erd.png`
+- Created: `erd.png`, `Logical schema.png`
 
 **Biniam Girma (ETS 0312/17)**
 - Created: `normalization.pdf`
