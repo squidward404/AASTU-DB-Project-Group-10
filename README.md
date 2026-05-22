@@ -1,4 +1,4 @@
-# AASTU-DB-Project-Group-5
+# AASTU-DB-Project-Group-10
 
 ## Project Title
 Inventory and Sales Management System Database
