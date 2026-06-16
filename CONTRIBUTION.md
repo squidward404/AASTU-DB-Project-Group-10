@@ -20,9 +20,9 @@ This document outlines the individual contributions of each group member to the 
 - Created: `collections.json`
 
 **Befikir Shimelis (ETS 0237/17)**
+- Created: `queries.js`
 - Role: Overall project coordination
 - Created: `CONTRIBUTION.md`, `README.md`
-- - Created: `queries.js`
 
 ---
 
