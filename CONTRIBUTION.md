@@ -17,11 +17,12 @@ This document outlines the individual contributions of each group member to the 
 - Created: `schema.sql`, `queries.sql`
 
 **Adonias Hailu (ETS 0103/17)**
-- Created: `collections.json`, `queries.js`
+- Created: `collections.json`
 
 **Befikir Shimelis (ETS 0237/17)**
 - Role: Overall project coordination
 - Created: `CONTRIBUTION.md`, `README.md`
+- - Created: `queries.js`
 
 ---
 
